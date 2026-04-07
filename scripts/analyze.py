@@ -4,7 +4,7 @@ Threads 交友軟體貼文分析器
 讀取 data/raw/ 所有 JSON，去重、分類、產生 HTML 報告
 """
 
-import json, csv, os, re, math, statistics
+import json, csv, os, re, math, statistics, argparse
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from collections import Counter
@@ -476,12 +476,31 @@ def save_csv(posts):
             })
 
 
+def filter_by_date(posts, days):
+    """只保留近 N 天內的貼文"""
+    cutoff = datetime.now(TZ_TPE) - timedelta(days=days)
+    before = len(posts)
+    filtered = [p for p in posts if p["dt"] and p["dt"] >= cutoff]
+    # 沒有時間戳的貼文也保留（避免遺失資料）
+    no_date = [p for p in posts if p["dt"] is None]
+    result = filtered + no_date
+    print(f"  時間篩選（近 {days} 天）: {before} → {len(filtered)} 篇（+{len(no_date)} 篇無時間戳）")
+    return result
+
+
 def main():
+    parser = argparse.ArgumentParser(description="Threads 交友軟體貼文分析器")
+    parser.add_argument("--days", type=int, default=30, help="取樣區間天數（預設 30）")
+    args = parser.parse_args()
+
     print("=== Threads 交友軟體分析器 ===")
     print(f"讀取 {RAW_DIR} ...")
+    print(f"取樣區間: 近 {args.days} 天")
 
     posts = load_all_posts()
     print(f"  載入貼文: {len(posts)} 篇")
+
+    posts = filter_by_date(posts, args.days)
 
     dating = filter_dating(posts)
     print(f"  交友相關: {len(dating)} 篇")
