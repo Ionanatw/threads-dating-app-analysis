@@ -1,0 +1,59 @@
+name: Threads 週一熱榜
+
+on:
+  schedule:
+    # 週一 01:00 UTC = 09:00 GMT+8（台北時間）
+    - cron: '0 1 * * 1'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: '執行模式'
+        required: false
+        default: 'deploy'
+        type: choice
+        options:
+          - deploy
+          - build
+          - skip-scrape
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build .env for Apify
+        run: echo "APIFY_TOKEN=${{ secrets.APIFY_TOKEN }}" > .env
+
+      - name: Run pipeline
+        env:
+          THREADS_TOKEN_COSMATE: ${{ secrets.THREADS_TOKEN_COSMATE }}
+          THREADS_USERID_COSMATE: ${{ secrets.THREADS_USERID_COSMATE }}
+          THREADS_USERNAME_COSMATE: ${{ secrets.THREADS_USERNAME_COSMATE }}
+        run: bash scripts/weekly.sh ${{ github.event.inputs.mode || 'deploy' }}
+
+      - name: Deploy to Cloudflare Pages
+        if: ${{ github.event.inputs.mode != 'build' && github.event.inputs.mode != 'skip-scrape' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy . --project-name=threads-analytics-report --commit-dirty=true
+
+      - name: Upload report as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-report-${{ github.run_number }}
+          path: |
+            index.html
+            data/per_topic/
+          retention-days: 30
