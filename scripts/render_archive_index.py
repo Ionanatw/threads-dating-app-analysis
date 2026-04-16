@@ -39,6 +39,9 @@ OTHER_REPORTS = [
             {"title": "2026 交通通行證 — COSER 專用", "date": "2026-04-01",
              "url": "https://cowriding.pages.dev",
              "note": "Coser 活動頁"},
+            {"title": "測測你是哪位魔法使（芙莉蓮）", "date": "2026-04-07",
+             "url": "https://007-frieren-quiz.pages.dev",
+             "note": "芙莉蓮角色心測 · 結果頁缺角色圖（待補）"},
         ],
     },
 ]
