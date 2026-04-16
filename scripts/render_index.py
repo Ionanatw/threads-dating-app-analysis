@@ -153,7 +153,7 @@ footer {{ text-align:center; color:var(--text-secondary); font-size:0.75rem; mar
 <body>
 <div class="container">
   <header>
-    <div class="subtitle">Weekly Trends Insight · <a href="reports/archive/" style="color:var(--text-secondary);text-decoration:underline;">📚 歷史週報</a></div>
+    <div class="subtitle">Weekly Trends Insight · <a href="https://threads-analytics-report.pages.dev/reports/archive/" style="color:var(--text-secondary);text-decoration:underline;">📚 歷史週報</a></div>
     <h1>Threads 週一熱門報告<br>動漫 × 交友 × Cosplay</h1>
     <div class="gen">Generated {generated} GMT+8 · 本週 {week_slug} · 主報告近 30 天 · 進階區塊近 7 天</div>
   </header>
