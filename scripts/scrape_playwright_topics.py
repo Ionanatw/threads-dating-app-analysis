@@ -122,7 +122,16 @@ def convert_to_apify_format(posts):
 
 
 def main():
-    topics = sys.argv[1:] or list(TOPIC_TARGETS.keys())
+    import argparse as _ap
+    parser = _ap.ArgumentParser(description="Playwright 多主題爬蟲")
+    parser.add_argument("topics", nargs="*", default=list(TOPIC_TARGETS.keys()),
+                        help="指定主題（預設全部）")
+    parser.add_argument("--scroll", type=int, default=8,
+                        help="每搜尋目標捲動次數（daily 建議 4，weekly 建議 8）")
+    args = parser.parse_args()
+
+    topics = args.topics
+    scroll = args.scroll
     unknown = [t for t in topics if t not in TOPIC_TARGETS]
     if unknown:
         sys.exit(f"❌ 未知主題: {unknown}。可選: {list(TOPIC_TARGETS.keys())}")
@@ -140,7 +149,7 @@ def main():
 
     total = 0
     for topic in topics:
-        posts = scrape_topic(topic, cookies_file)
+        posts = scrape_topic(topic, cookies_file, scroll=scroll)
         if not posts:
             print(f"  ⚠️  {topic}: 0 筆，跳過")
             continue

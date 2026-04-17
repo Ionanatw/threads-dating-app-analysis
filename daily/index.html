@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Threads 今日最熱 — 2026-04-17</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#f5f0e8; --card:#fffdf7; --border:#ddd5c4; --text:#1a1a18; --muted:#7a7568; --accent:#c45a3c; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'Noto Serif TC','Georgia',serif; line-height:1.7; }
+.container { max-width:720px; margin:0 auto; padding:32px 16px; }
+
+header { text-align:center; margin-bottom:36px; border-bottom:3px double var(--border); padding-bottom:24px; }
+.edition { font-family:'Inter',sans-serif; font-size:0.7rem; color:var(--muted); letter-spacing:4px; text-transform:uppercase; }
+h1 { font-size:2rem; font-weight:700; margin:8px 0; letter-spacing:1px; }
+.sub { font-size:0.85rem; color:var(--muted); font-style:italic; }
+.nav-links { font-family:'Inter',sans-serif; font-size:0.75rem; margin-top:12px; }
+.nav-links a { color:var(--accent); text-decoration:none; }
+
+.tabs { display:flex; justify-content:center; gap:20px; margin-bottom:28px; }
+.tab { font-family:'Inter',sans-serif; font-size:0.8rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--muted); cursor:pointer; padding-bottom:4px; border:none; background:none; transition:all 0.2s; }
+.tab:hover { color:var(--text); }
+.tab.active { color:var(--tab-accent); border-bottom:2px solid var(--tab-accent); }
+
+.panel { display:none; }
+.panel.active { display:block; }
+
+.post-card {
+  display:block; text-decoration:none; color:inherit;
+  background:var(--card); border:1px solid var(--border); border-radius:6px;
+  padding:28px 28px 20px; margin-bottom:20px; position:relative;
+  transition:box-shadow 0.2s, border-color 0.2s; cursor:pointer;
+}
+.post-card:hover { box-shadow:0 6px 24px rgba(0,0,0,0.08); border-color:var(--accent); }
+
+.rank-badge { position:absolute; top:-10px; left:20px; background:var(--accent); color:#fff; font-family:'Inter',sans-serif; font-size:0.7rem; font-weight:800; padding:4px 12px; border-radius:14px; letter-spacing:1px; }
+.topic-tag { font-family:'Inter',sans-serif; font-size:0.62rem; letter-spacing:3px; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6px; }
+.author-row { display:flex; align-items:center; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+.author { font-family:'Inter',sans-serif; font-weight:700; font-size:0.9rem; }
+.time { font-family:'Inter',sans-serif; font-size:0.7rem; color:var(--muted); }
+.type-badge { font-family:'Inter',sans-serif; font-size:0.62rem; font-weight:700; padding:2px 8px; border-radius:4px; background:#f0ede4; color:var(--muted); }
+
+.original-text { font-size:1rem; line-height:1.85; margin:14px 0; padding:14px 18px; background:#faf8f2; border-left:3px solid var(--border); border-radius:0 6px 6px 0; white-space:pre-wrap; word-break:break-word; }
+
+.ai-comment { margin:14px 0; padding:12px 16px; background:linear-gradient(135deg,#1a1a18,#2a2924); color:#f5f0e8; border-radius:8px; font-family:'Inter',sans-serif; font-size:0.85rem; line-height:1.65; }
+.ai-comment .label { font-size:0.62rem; letter-spacing:2px; text-transform:uppercase; color:var(--accent); margin-bottom:4px; display:block; }
+
+.metrics { display:flex; gap:14px; font-family:'Inter',sans-serif; font-size:0.78rem; color:var(--muted); padding-top:10px; border-top:1px solid var(--border); flex-wrap:wrap; }
+.metrics span { display:flex; align-items:center; gap:3px; }
+.metrics .total { color:var(--accent); font-weight:800; font-size:0.85rem; margin-left:auto; }
+
+.empty { text-align:center; color:var(--muted); padding:40px; font-style:italic; }
+
+footer { text-align:center; color:var(--muted); font-size:0.7rem; margin-top:32px; padding-top:16px; border-top:1px solid var(--border); font-family:'Inter',sans-serif; }
+footer a { color:var(--accent); text-decoration:none; }
+
+@media (max-width:640px) {
+  .container { padding:20px 12px; }
+  h1 { font-size:1.5rem; }
+  .post-card { padding:20px 16px 16px; }
+  .original-text { font-size:0.92rem; padding:10px 14px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="edition">Daily Hot · 2026-04-17</div>
+    <h1>Threads 今日最熱</h1>
+    <div class="sub">過去 36 小時 · 動漫 × 交友 × Cosplay</div>
+    <div class="nav-links">
+      <a href="https://threads-analytics-report.pages.dev/">← 週報</a>
+      &nbsp;·&nbsp;
+      <a href="https://threads-analytics-report.pages.dev/reports/archive/">📚 Archive</a>
+    </div>
+  </header>
+
+  <div class="tabs"><button class="tab active" data-topic="anime" style="--tab-accent:#0079C6">🎌 動漫</button><button class="tab" data-topic="love" style="--tab-accent:#c45a3c">💔 交友</button><button class="tab" data-topic="cosplay" style="--tab-accent:#7c3aed">✨ Cosplay</button></div>
+  <div class="panel active" id="panel-anime"></div><div class="panel" id="panel-love"></div><div class="panel" id="panel-cosplay"></div>
+
+  <footer>
+    36h window · Playwright scraper · AI by Claude · Generated 2026-04-17 13:05 GMT+8<br>
+    <a href="https://threads-analytics-report.pages.dev/">週報</a> · <a href="https://threads-analytics-report.pages.dev/reports/archive/">Archive</a>
+  </footer>
+</div>
+
+<script>
+const DATA = {"anime": [{"author": "nikkandenden", "url": "https://www.threads.com/@nikkandenden/post/DXLjr2oEgGs", "text": "其中主角之一的城崎芽衣，由於若山詩音的配音加上劇中偽娘的設定，播出後立刻吸引大量觀眾讚賞，更讓許多網友直呼性癖被掰彎，開播至今兩話也成為熱議話題。", "likes": 1855, "comments": 15, "reposts": 44, "shares": 611, "total_engagement": 2525, "primary_type": "B", "types": ["B"], "comment_rate": 0.81, "share_rate": 24.2, "dt": "2026-04-16T13:20:14+08:00", "hour": 13, "weekday": "Thursday", "source": "anime_2026-04-17_124443.json", "ai_comment": "偽娘角色搭配聲優演繹觸發觀眾「反差萌」與「性癖覺醒」的刺激感，引發大量討論和自我調侃。CosMate可以主打「讓你性癖覺醒的Coser」系列，聚焦反差扮演如偽娘、女裝大佬等跨性別角色，用「你的性癖被哪個角色掰彎」作為話題點，吸引用戶分享心動瞬間和私訊交流。"}, {"author": "cool_magazine_taiwan", "url": "https://www.threads.com/@cool_magazine_taiwan/post/DXMdZW0jyey", "text": "而這樣的期待，近期似乎由粉絲親手實現。國外粉絲團隊歷時約三年，將岸本齊史親自執筆的《波風水門外傳》動畫化，耗時三年完全沒利用任何 AI 技術打造。隨著近日首張動畫宣傳視覺曝光，無論是畫面風格還是劇情元素，都迅速在火影迷之間掀起熱烈討論，再度點燃這部經典作品的話題熱度。 \n1\n/\n2", "likes": 800, "comments": 4, "reposts": 47, "shares": 279, "total_engagement": 1130, "primary_type": "B", "types": ["B", "D"], "comment_rate": 0.5, "share_rate": 24.69, "dt": "2026-04-16T21:44:31+08:00", "hour": 21, "weekday": "Thursday", "source": "anime_2026-04-17_124443.json", "ai_comment": "這篇引爆粉絲的「情懷經濟」和「參與感」，強調粉絲自製、耗時三年、拒用AI等關鍵字，讓火影迷產生敬意與共鳴。CosMate可以分享「Coser歷時數月還原經典角色」的幕後故事，搭配對比圖和製作花絮，突出手工精神與對原作的熱愛，引發同好圈層的情感共振和二次傳播。"}, {"author": "mini.peng.35", "url": "https://www.threads.com/@mini.peng.35/post/DXLvsa6E-z8", "text": "我有點想買這個娃娃\n可是他越看越像蛋黃哥\n我不想要蛋黃哥\n害我有點不想買了 誰來救救我 \n1\n/\n2", "likes": 318, "comments": 14, "reposts": 3, "shares": 34, "total_engagement": 369, "primary_type": "C", "types": ["C"], "comment_rate": 4.4, "share_rate": 9.21, "dt": "2026-04-16T15:05:10+08:00", "hour": 15, "weekday": "Thursday", "source": "anime_2026-04-17_124443.json", "ai_comment": "這篇爆紅因為「購物前的自我掙扎」引發共鳴，加上蛋黃哥的荒謬聯想製造笑點，求救式結尾邀請網友互動。CosMate可以模仿這種「猶豫文學」，例如「想cosplay這個角色但朋友說我像隔壁老王怎麼辦」，用自嘲式困境加網友意見徵詢，創造輕鬆討論氛圍並提升留言參與度。"}, {"author": "__miaaa97", "url": "https://www.threads.com/@__miaaa97/post/DXMPFZhk-4n", "text": "嘿嘿 終於全部到貨了\n唯一親生的實彌\n嗯… 準確來說1/3🤣🤣🤣", "likes": 18, "comments": 2, "reposts": 0, "shares": 0, "total_engagement": 20, "primary_type": "E", "types": ["E"], "comment_rate": 11.11, "share_rate": 0.0, "dt": "2026-04-16T19:40:24+08:00", "hour": 19, "weekday": "Thursday", "source": "anime_2026-04-17_124443.json", "ai_comment": "這篇以「親生」梗玩收藏偏心，精準戳中同好共鳴——誰的手辦牆都有最愛角色！1/3的自嘲補充更添真實感。CosMate可鼓勵Coser曬「本命角vs全角色」對比圖，用「唯一親生是XX」句式引發粉絲站隊互動，或推出「你的Cos親生兒子是誰」投票活動，製造歸屬感與話題性。"}, {"author": "kyoyasai_urimasu2", "url": "https://www.threads.com/@kyoyasai_urimasu2/post/DXKBov4k9Bf", "text": "僕、農業やってて休みがいきなりくる時があるんですよね、で1人でご飯行くことが多いんですけどいっつも迷うんですよ。", "likes": 7, "comments": 9, "reposts": 0, "shares": 0, "total_engagement": 16, "primary_type": "E", "types": ["E"], "comment_rate": 128.57, "share_rate": 0.0, "dt": "2026-04-15T23:03:28+08:00", "hour": 23, "weekday": "Wednesday", "source": "anime_2026-04-16_013422.json", "ai_comment": "這篇貼文以農業工作者的日常困擾切入，突然放假卻不知該吃什麼的真實感引發共鳴，展現平凡生活中的小煩惱反而最能觸動人心。CosMate可以讓Coser分享「活動結束後突然空閒時的選擇困難」或「卸妝後一個人覓食的日常」，用反差萌的真實感拉近與粉絲距離，營造親切可愛的人設形象。"}], "love": [{"author": "kame_.63", "url": "https://www.threads.com/@kame_.63/post/DXL83VqE16L", "text": "同學 我們沒有下個學期了", "likes": 217, "comments": 4344, "reposts": 4788, "shares": 0, "total_engagement": 9349, "primary_type": "B", "types": ["B", "C"], "comment_rate": 2001.84, "share_rate": 0.0, "dt": "2026-04-16T17:00:15+08:00", "hour": 17, "weekday": "Thursday", "source": "love_2026-04-17_124443.json", "ai_comment": "這篇貼文透過「畢業離別」的時間焦慮感，勾起所有學生對友情即將消逝的共鳴與不捨，簡短一句話卻充滿遺憾與珍惜的複雜情緒，引發大量轉發。CosMate 可以用「搭檔 我們沒有下場活動了」或「這套C服可能是我們最後的合照」等句式，結合Coser圈特有的場次文化與CP搭檔情誼，製造珍惜當下的情感共鳴。"}, {"author": "lucky.noir607", "url": "https://www.threads.com/@lucky.noir607/post/DXMq_hoEw-i", "text": "請大家幫我擴散‼️感覺這個人是慣犯了\n跟著我一段路然後還威脅我刪自保的影片\n我錄影當下手超抖\n因為這個人感覺超不正常...而且一度靠很近\n-\n剛剛自己一個去台中一中附近買晚餐 突然遇到一個男生上前跟我搭話 本來以為是直銷或要拍影片什麼的直接走進隔壁飾品店不理他，想說可以擺脫他了吧\n結果他居然跟上來‼️我直接拿起手機錄影\n他趕快擋臉走掉\n後來要去牽車又遇到他第二次 然後我轉頭一看發現他一直盯著我 我就拿起手機覺得很可怕 手整個都在抖...因為他一直越靠越近 然後說什麼他剛剛跟我搭話是認錯人 但明明我看到的是他已經跟著我一小段而且跟我對到眼很多次 感覺就是唬爛...\n然後看我錄影就超緊張叫我刪掉 ", "likes": 4024, "comments": 424, "reposts": 466, "shares": 713, "total_engagement": 5627, "primary_type": "A", "types": ["A"], "comment_rate": 10.54, "share_rate": 12.67, "dt": "2026-04-16T23:43:19+08:00", "hour": 23, "weekday": "Thursday", "source": "love_2026-04-17_124443.json", "ai_comment": "這篇引爆恐懼與共鳴，女性對跟蹤騷擾的集體焦慮讓大家瘋傳自保。CosMate可發起「展場安全通報」功能，讓用戶匿名分享可疑人士照片或行為，搭配「Coser互助陪伴系統」在漫展配對同行夥伴，把恐懼轉化為社群保護機制，強化平台的安全感與信任度。"}, {"author": "liwei_is_liwei", "url": "https://www.threads.com/@liwei_is_liwei/post/DXM2NZGk_z_", "text": "沒想到…我前幾天才回到母校看目前「正在施工」的狀況\n結果今天就收到有議員因為當地民眾反對，\n所以要召開說明會，\n這代表，有可能正在施工的人行道工程，\n可能因此中斷！", "likes": 2664, "comments": 209, "reposts": 323, "shares": 253, "total_engagement": 3449, "primary_type": "C", "types": ["C"], "comment_rate": 7.85, "share_rate": 7.34, "dt": "2026-04-17T01:21:20+08:00", "hour": 1, "weekday": "Friday", "source": "love_2026-04-17_124443.json", "ai_comment": "這篇貼文觸發了「公民參與焦慮感」和「基層vs.政治角力」的無力感，讓人想追蹤後續發展。CosMate可以模仿「突發反轉」敘事結構，例如「沒想到昨天才在場次認識新朋友，今天就收到主辦方可能因檢舉要取消活動的消息」，製造時效緊迫感和社群連帶情緒，引發Coser對活動空間議題的共鳴討論。"}, {"author": "kerryuuliao", "url": "https://www.threads.com/@kerryuuliao/post/DXNxvSfDxsV", "text": "疑 小道好像又被爆了\n好吧那應該可以說了\n龍哥下個月底高雄見🫶 \n1\n/\n2", "likes": 1126, "comments": 52, "reposts": 8, "shares": 1649, "total_engagement": 2835, "primary_type": "B", "types": ["B"], "comment_rate": 4.62, "share_rate": 58.17, "dt": "2026-04-17T10:01:31+08:00", "hour": 10, "weekday": "Friday", "source": "love_2026-04-17_124443.json", "ai_comment": "這篇利用「小道消息證實」的八卦感營造神秘氛圍，加上「龍哥」這類暱稱讓粉絲秒懂是誰，既曖昧又親密的預告手法引發期待感。CosMate 可以讓用戶發布「下個月XX場見」的含蓄預告，搭配限時解密機制，讓同好在猜測與揭曉間產生互動熱度，強化圈內人的歸屬感。"}], "cosplay": [{"author": "amemaru_c", "url": "https://www.threads.com/@amemaru_c/post/DXMnilQAS0h", "text": "丟一下Acosta兩天的眼妝 \n1\n/\n2", "likes": 277, "comments": 6, "reposts": 7, "shares": 3, "total_engagement": 293, "primary_type": "X", "types": ["X"], "comment_rate": 2.17, "share_rate": 1.02, "dt": "2026-04-16T23:13:09+08:00", "hour": 23, "weekday": "Thursday", "source": "cosplay_2026-04-17_124443.json", "ai_comment": "這篇爆紅是因為展示了精緻的眼妝技巧細節，滿足同好學習慾望與視覺享受，Acosta活動標籤也增加社群連結感。CosMate可以設計「妝容教學」專區，讓Coser分步驟上傳化妝過程圖，並標註使用產品和技法，搭配活動打卡功能，促進妝容交流與約展互動，建立技術型社群黏著度。"}, {"author": "minami_hibihibi", "url": "https://www.threads.com/@minami_hibihibi/post/DXMlcxzj6MZ", "text": "在那之後有預定要出小九\n結果我的搭檔不見了XD\n沒有搭檔在我也社恐\n然後就沒再碰cos了\n就這樣過了超過10年w\n現在的我也沒有勇氣回cos圈了Q", "likes": 2, "comments": 40, "reposts": 16, "shares": 1, "total_engagement": 59, "primary_type": "X", "types": ["X"], "comment_rate": 2000.0, "share_rate": 1.69, "dt": "2026-04-16T22:54:53+08:00", "hour": 22, "weekday": "Thursday", "source": "cosplay_2026-04-17_124443.json", "ai_comment": "這篇戳中Coser共同痛點：搭檔消失導致活動中斷，社恐讓人難以重返圈子，十年空窗引發集體懷舊共鳴。CosMate可以製作「那些年因為XX就放棄的角色」徵集活動，搭配「尋找失散搭檔」或「社恐友善配對」功能宣傳，用懷舊情緒包裝配對需求，讓老Coser有台階回圈。"}, {"author": "meroz0205", "url": "https://www.threads.com/@meroz0205/post/DXMj_00GCLW", "text": "看到這種「肉眼可見喜歡某一代」的玩家真的會很開心欸（？？？\n整個超有愛www\nBtw 現代題材真的沒想到諾克提斯沒先上\nDFFNT我最喜歡諾克提斯跟初代光討論智慧型手機這件事了\n超好笑⋯⋯\n-\n這遊戲如果出FF14的「那個人」\n如果真的出了\n我會把所有包的都買一次吧⋯⋯（但按照角色定位我知道SE社出不了他的）\n⋯⋯不然那是錢包的靈災- -", "likes": 25, "comments": 1, "reposts": 0, "shares": 0, "total_engagement": 26, "primary_type": "X", "types": ["X"], "comment_rate": 4.0, "share_rate": 0.0, "dt": "2026-04-16T22:42:12+08:00", "hour": 22, "weekday": "Thursday", "source": "cosplay_2026-04-17_124443.json", "ai_comment": "這篇引爆粉絲共鳴的關鍵在於「真愛玩家的偏執感」和具體遊戲角色梗，讓同溫層瞬間找到知音。CosMate可以鼓勵用戶曬出「肉眼可見偏愛某角色」的出cosp照片牆，搭配「如果官方出XX我願意傾家蕩產」的誇張告白文案，用狂熱情緒吸引同好按讚留言分享戰利品。"}, {"author": "yamatomichi0613", "url": "https://www.threads.com/@yamatomichi0613/post/DXNqqURk3lL", "text": "[這是FF] 收到姐姐msg 我話佢都鐘意我", "likes": 12, "comments": 1, "reposts": 1, "shares": 0, "total_engagement": 14, "primary_type": "X", "types": ["X"], "comment_rate": 8.33, "share_rate": 0.0, "dt": "2026-04-17T08:59:40+08:00", "hour": 8, "weekday": "Friday", "source": "cosplay_2026-04-17_124443.json", "ai_comment": "這篇透過「姐姐也喜歡我」的曖昧互動營造戲劇張力，滿足讀者對角色扮演延伸到現實關係的幻想。CosMate可以設計「同好告白」功能，讓用戶分享Coser間的互動小故事，或推出「角色關係配對」遊戲化機制，例如配對成CP角色後解鎖專屬聊天室，刺激用戶主動分享甜蜜互動截圖。"}, {"author": "y._unnnnnn", "url": "https://www.threads.com/@y._unnnnnn/post/DXLu98Wic4v", "text": "求救 ff雜誌普通跟官方的封面是一樣的嗎", "likes": 1, "comments": 1, "reposts": 0, "shares": 0, "total_engagement": 2, "primary_type": "X", "types": ["X"], "comment_rate": 100.0, "share_rate": 0.0, "dt": "2026-04-16T14:58:49+08:00", "hour": 14, "weekday": "Thursday", "source": "cosplay_2026-04-17_124443.json", "ai_comment": "這篇觸及Coser的實用需求痛點，FF場刊版本差異是新手常見困惑，引發有經驗者主動解答的助人慾望。CosMate可設計「場次新手提問區」功能，鼓勵用戶發問活動攤位、刊物、場地規則等實務問題，建立互助氛圍同時讓資深玩家展現expertise，提升社群黏著度和新手留存率。"}]};
+
+const TYPE_NAMES = {
+  'A': '全能爆款', 'B': '私域擴散', 'C': '戰場議論',
+  'D': '靜默共鳴', 'E': '穩定互動', 'X': '長尾'
+};
+const TYPE_EMOJI = {
+  'A': '🔥', 'B': '✈️', 'C': '💬', 'D': '❤️', 'E': '📊', 'X': '🫧'
+};
+
+function esc(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function fmt(n) { return n.toLocaleString(); }
+
+function renderPanel(topic) {
+  const posts = DATA[topic];
+  if (!posts || !posts.length) return '<div class="empty">近 36 小時無符合標準貼文</div>';
+
+  return posts.map((p, i) => {
+    const text = (p.text || '').replace(/\n/g, '<br>').slice(0, 400);
+    const dt = p.dt ? p.dt.slice(0, 16).replace('T', ' ') : '';
+    const typeName = TYPE_NAMES[p.primary_type] || p.primary_type;
+    const typeEmoji = TYPE_EMOJI[p.primary_type] || '';
+    const aiHtml = p.ai_comment
+      ? `<div class="ai-comment"><span class="label">🧠 AI 點評</span>${esc(p.ai_comment)}</div>`
+      : '';
+    const url = p.url || '#';
+
+    return `<a href="${esc(url)}" target="_blank" rel="noopener" class="post-card">
+      <div class="rank-badge">#${i + 1}</div>
+      <div class="author-row">
+        <div class="author">@${esc(p.author)}</div>
+        <div class="time">${dt}</div>
+        <div class="type-badge">${typeEmoji} Type ${p.primary_type} ${typeName}</div>
+      </div>
+      <div class="original-text">${text}</div>
+      ${aiHtml}
+      <div class="metrics">
+        <span>❤️ ${fmt(p.likes)}</span>
+        <span>💬 ${fmt(p.comments)}</span>
+        <span>🔁 ${fmt(p.reposts)}</span>
+        <span>✈️ ${fmt(p.shares)}</span>
+        <span class="total">${fmt(p.total_engagement)} 互動</span>
+      </div>
+    </a>`;
+  }).join('');
+}
+
+// Init panels
+document.querySelectorAll('.panel').forEach(panel => {
+  panel.innerHTML = renderPanel(panel.id.replace('panel-', ''));
+});
+
+// Tab switching
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.topic).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
